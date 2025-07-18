@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bedrock Chat</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; }
+    textarea { width: 100%; height: 80px; }
+    .response { background-color: #f2f2f2; padding: 15px; border-radius: 8px; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h1>Chat with Bedrock Model</h1>
+  <form method="POST">
+    <textarea name="prompt" placeholder="Type your message here...">{{ user_input or '' }}</textarea><br>
+    <button type="submit">Send</button>
+  </form>
+
+  {% if response_text %}
+  <div class="response">
+    <strong>Response:</strong><br>
+    {{ response_text }}
+  </div>
+  {% endif %}
+</body>
+</html>
